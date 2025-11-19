@@ -58,6 +58,9 @@ FloatImagePtr multiscaleSheetness(
         sheetnessFilter->SetROIImage(roi);
 
         FloatImagePtr singleScaleSheetness = sheetnessFilter->GetOutput();
+      
+        // add by BigPanda 2025.10.23  delete the sheetnessFilter pointer
+        delete sheetnessFilter;
 
         if (i==0) {
             multiscaleSheetness = singleScaleSheetness;
